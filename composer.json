@@ -1,0 +1,17 @@
+{
+	"name" : "appserver-io-apps/grav-packer",
+	"description" : "An ANT based Grav CMS PHAR packager",
+	"version" : "1.0.0",
+	"require" : {
+		"php" : ">=5.6.0"
+	},
+	"require-dev" : {
+		"appserver-io/phar" : "~1.0",
+		"appserver-io/build" : "~1.0"
+	},
+	"authors" : [{
+			"name" : "Tim Wagner",
+			"email" : "tw@appserver.io"
+		}
+	]
+}
