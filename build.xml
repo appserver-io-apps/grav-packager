@@ -52,7 +52,7 @@
     <!-- ==================================================================== -->
     <target name="composer-update" depends="is-composer-installed" if="composer.present" description="Updates composer dependencies defined in composer.json">
         <exec dir="${basedir}" executable="composer">
-            <arg line="--no-interaction --dev update"/>
+            <arg line="--no-interaction --dev update--ignore-platform-reqs"/>
         </exec>
     </target>
 
@@ -73,7 +73,7 @@
         <mkdir dir="${php-target.dir}/${appserver.webapp.name}-${appserver.webapp.version}"/>
         <!-- install Grav using Composer -->
         <exec dir="${php-target.dir}" executable="composer">
-            <arg line="create-project getgrav/grav ${php-target.dir}/${appserver.webapp.name}-${appserver.webapp.version}"/>
+            <arg line="create-project --ignore-platform-reqs getgrav/grav ${php-target.dir}/${appserver.webapp.name}-${appserver.webapp.version}"/>
         </exec>
         <!-- install the Grav admin UI -->
         <exec dir="${php-target.dir}/${appserver.webapp.name}-${appserver.webapp.version}" executable="bin/gpm">
